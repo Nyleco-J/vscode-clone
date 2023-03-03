@@ -1,0 +1,207 @@
+.header{
+    background-color: #2C2C32;
+    z-index: 999;
+   &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+   }
+   position: relative;
+   position: fixed;
+   width: 100%;
+   .branding{
+       display: flex;
+       align-items: center;
+       }
+       button{
+        margin-left: 10rem;
+       }
+       img{
+           width: 2.5rem;
+       }
+       h3{
+           color: $clr-light;
+           margin-left: 1rem;
+           font-size: 2rem;
+           font-weight: 100;
+           span{
+               color: $clr-primary;
+           }
+       }
+       &__nav{
+        position: absolute;
+        background: rgb(255, 255, 255);
+        top: 5rem;
+        right: 0;
+        width: 100%;
+        max-height: 0rem;
+        overflow: hidden;
+        transition: .5s ease;
+        z-index: 0;
+        ul{
+            display: block;
+            background-color: #2C2C32;
+            li{
+                padding: 1rem;
+                margin-left: .5rem;
+                a{
+                    text-decoration: none;
+                    color: $clr-light;
+                    font-size: 1.5rem;
+                }
+            }
+            
+        }
+        &.open{
+            max-height: 34.5rem;
+            transition: .5s ease;
+            overflow: auto;
+        }
+        .download{
+            background-color: #0066B8;
+            &:hover{
+                background-color: rgb(2, 59, 172);
+            }
+            a{
+                margin-left: 1rem;
+            }
+            i{
+                color: $clr-light;
+            }
+        }
+    }
+    &__nav2{
+        position: absolute;
+        background: rgb(255, 255, 255);
+        top: 7rem;
+        right: 0;
+        max-height: 0rem;
+        overflow: hidden;
+        transition: .5s ease;
+        z-index: 0;
+        ul{
+            display: block;
+            background-color: #2C2C32;
+            li{
+                padding: 1rem;
+                margin-left: .5rem;
+                a{
+                    text-decoration: none;
+                    color: $clr-light;
+                    font-size: 1.8rem;
+                }
+            }
+            
+        }
+        &.open{
+            max-height: 37rem;
+            transition: .5s ease;
+            overflow: auto;
+        }
+        .download{
+            background-color: #0066B8;
+            a{
+                margin-left: 1rem;
+            }
+            i{
+                color: $clr-light;
+            }
+        }
+    }
+    .toggle__menu{
+        display: block;
+        &:hover{
+            background-color: #2267F2;
+        }
+       
+        padding: .5rem;
+        span{
+            width: 3rem;
+            height: .3rem;
+            background-color: $clr-light;
+            display: block;
+            margin-bottom: .5rem;
+            border-radius: 5rem;
+            transition: .5s ease;
+        }
+    }
+    @include mediaQuery($break-lg){
+        .toggle__menu{
+            display: none;
+        }
+        .branding{
+            margin-left: 12rem;
+        }
+        .container{
+            padding: 0;
+        }
+        &__nav2{
+            position:static;
+            max-height: unset;
+            margin-left: 5rem;
+            display: flex;
+            background: none;
+            ul{
+                display: none;
+                &.download{
+                    display: block;
+                }
+            }
+            .input{
+                display: flex;
+                align-items: center;
+                background-color: #3D3D42;
+                &:hover{
+                    background-color: #a3a3a7;
+                    opacity: .5;
+                }
+
+                i{
+                    color: $clr-light;
+                    margin-right: .5rem;
+                }
+            }
+        }
+        &__nav{
+            position: unset;
+            width: unset;
+            height: unset;
+            max-height: fit-content;
+            display: flex;
+            
+            ul{
+                display: flex;
+                li{
+                    a{
+                        font-size: 1.6rem;
+                        color: #A4A4A7;
+                    }
+                   &:hover{
+                        background: none;
+                        a{
+                            color: $clr-light;
+                        }
+                   }
+                   .download{
+                    ul{
+                        li{
+                            display: inline-flex;
+                        }
+                        
+                    }
+                   }
+                   
+                }
+                &.download{
+                    display: none;
+                }
+                
+            }
+            li:last-child {
+                display: none;
+            }
+        }
+    }
+ }
+   
+

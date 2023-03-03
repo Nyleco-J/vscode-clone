@@ -1,0 +1,87 @@
+.version{
+    .container{
+        padding: 1.5rem;
+    }
+    padding-top:  5rem;
+    background-color: #25252B;
+    &__wrapper{
+        text-align: center;
+    }
+    p{
+        color: #C1CCCC;
+        font-size: 1.5rem;
+    }
+    a{
+        color: #2267F2;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+}
+.banner__code{
+    background-color: #2C2C32;
+    text-align: center;
+    &__text{
+        color: #FFFFFF;
+        font-size: 5rem;
+        text-align: center;
+        h1{
+            font-weight: 600;
+           font-size: 4rem;
+           text-align: center;
+           padding: 1.5rem;
+            span{
+                font-weight: 100;
+                color: #FFFFFF;
+            }
+        }
+    }
+    .free{
+        color: #C1CCCC;
+        text-align: center;
+    }
+    .download{
+        &__button{
+            background-color: #0066B8;
+            margin: 0 auto;
+            max-width: 30rem;
+            padding: 1rem;
+           
+            button{
+                color: #FFFFFF; 
+            }
+            small{
+                color: #FFFFFF;
+                display: block;
+            }
+           
+        }
+    }
+    .web{
+        font-size: 1.2rem;
+        background-color: #25252B;
+        padding: 1rem;
+        margin: 0 auto;
+        color: gray;
+        a{
+            color: #2267F2;
+            text-align: center;
+        }
+        
+    }
+    .Vscode{
+        padding: 1rem;
+        font-size: 1.3rem;
+        max-width: 22rem;
+        align-items: center;
+        margin: 0 auto;
+       
+        p{
+            color: gray;
+        }
+        a{
+            color: #2267F2;
+        }
+    }
+    
+}
