@@ -1,8 +1,5 @@
 .version{
-    .container{
-        padding: 1.5rem;
-    }
-    padding-top:  5rem;
+    padding-top: 6rem;
     background-color: #25252B;
     &__wrapper{
         text-align: center;
@@ -20,16 +17,20 @@
 }
 .banner__code{
     background-color: #2C2C32;
-    text-align: center;
+    
+    &__wrapper{
+        padding: .5rem;
+    }
     &__text{
         color: #FFFFFF;
         font-size: 5rem;
         text-align: center;
         h1{
             font-weight: 600;
-           font-size: 4rem;
-           text-align: center;
-           padding: 1.5rem;
+            font-size: 5rem;
+            text-align: center;
+            padding: .5rem;
+            line-height: 1;
             span{
                 font-weight: 100;
                 color: #FFFFFF;
@@ -39,43 +40,54 @@
     .free{
         color: #C1CCCC;
         text-align: center;
+        padding-bottom: .5rem;
+        padding-top: .5rem;
     }
     .download{
         &__button{
             background-color: #0066B8;
             margin: 0 auto;
-            max-width: 30rem;
+            max-width: 25rem;
             padding: 1rem;
-           
+            text-align: center;
             button{
                 color: #FFFFFF; 
+                font-weight: 600;
+                font-size: 1.8rem;
             }
-            small{
+            span{
                 color: #FFFFFF;
                 display: block;
+                font-weight: none;
+                font-size: 1.5rem;
             }
-           
+            .icon{
+                margin-left: 3rem;
+            }
+            
         }
     }
     .web{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         background-color: #25252B;
-        padding: 1rem;
+        padding: .3rem;
         margin: 0 auto;
+        text-align: center;
+        max-width: 28rem;
         color: gray;
+        padding-top: .5rem;
         a{
             color: #2267F2;
-            text-align: center;
         }
         
     }
     .Vscode{
         padding: 1rem;
         font-size: 1.3rem;
-        max-width: 22rem;
+        max-width: 23rem;
         align-items: center;
         margin: 0 auto;
-       
+        text-align: center;
         p{
             color: gray;
         }
@@ -83,5 +95,21 @@
             color: #2267F2;
         }
     }
-    
+    .photo{
+        margin: 1rem;
+    }
+    @include mediaQuery($break-lg){
+        .container{
+            display: flex;
+        }
+        .banner__code__wrapper{
+            padding-top: 5rem;
+            margin-left: 12rem;
+        }
+        img{
+            margin-left: 2rem;
+            width: 80%;
+            height: 100%;
+        }
+    }
 }
