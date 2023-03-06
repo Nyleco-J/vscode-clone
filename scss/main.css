@@ -889,7 +889,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   opacity: 0.5;
   cursor: pointer;
 }
-.slider .fa-brands {
+.slider .fa-brands fa-twitter {
   margin-left: 15rem;
   color: gray;
   opacity: 0.5;
