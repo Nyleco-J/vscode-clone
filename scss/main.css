@@ -486,6 +486,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   margin-left: 1rem;
   font-size: 2rem;
   font-weight: 100;
+  cursor: pointer;
 }
 .header h3 span {
   color: #ff9a1e;
@@ -653,13 +654,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 .version {
-  padding-top: 5rem;
+  padding-top: 6rem;
   background-color: #25252B;
 }
 .version .container {
-  padding: 1.5rem;
+  padding: 0.5rem;
 }
-.version__wrapper {
+.version__text {
   text-align: center;
 }
 .version p {
@@ -677,6 +678,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   background-color: #2C2C32;
   text-align: center;
 }
+@media screen and (min-width: 970px) {
+  .banner__code {
+    grid-template-columns: 1fr 2fr;
+    padding: 3rem 0;
+  }
+}
 .banner__code__text {
   color: #FFFFFF;
   font-size: 5rem;
@@ -687,6 +694,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-size: 4rem;
   text-align: center;
   padding: 1.5rem;
+  line-height: 1;
 }
 .banner__code__text h1 span {
   font-weight: 100;
@@ -697,34 +705,62 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   text-align: center;
 }
 .banner__code .download__button {
-  background-color: #0066B8;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 30rem;
   padding: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  cursor: pointer;
 }
 .banner__code .download__button button {
+  background-color: #0066B8;
   color: #FFFFFF;
+  padding: 1rem 1.8rem;
+  font-size: 1.5rem;
 }
 .banner__code .download__button small {
   color: #FFFFFF;
   display: block;
+  font-size: 1.2rem;
+}
+.banner__code .download__button button:hover {
+  background-color: #034d8a;
 }
 .banner__code .web {
   font-size: 1.2rem;
   background-color: #25252B;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 auto;
   color: gray;
+  max-width: 28rem;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
 .banner__code .web a {
   color: #2267F2;
-  text-align: center;
+}
+.banner__code .web a:hover {
+  text-decoration: underline;
+}
+.banner__code .web::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #25252b;
+  top: 0;
+  right: 1rem;
+  z-index: -99;
+  transform: rotate(45deg);
+}
+.banner__code .web p {
+  margin-bottom: unset;
 }
 .banner__code .Vscode {
   padding: 1rem;
   font-size: 1.3rem;
   max-width: 22rem;
-  align-items: center;
   margin: 0 auto;
 }
 .banner__code .Vscode p {
@@ -733,263 +769,149 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .banner__code .Vscode a {
   color: #2267F2;
 }
-
-.footer {
-  background-color: #2d2d2d;
-  color: #fff;
-  padding: 6rem 0;
+.banner__code .Vscode a:hover {
+  text-decoration: underline;
 }
-.footer a {
-  color: #fff;
+.banner__code .photo {
+  margin: 1rem;
 }
-.footer__wrapper {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
-  grid-gap: 2rem;
-}
-@media screen and (min-width: 480px) {
-  .footer__wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 2rem;
-  }
-}
-.footer__item h3 {
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-  font-size: 1.8rem;
-}
-.footer__item p {
-  width: 80%;
-}
-.footer__item li {
-  margin-bottom: 1.6rem;
-}
-
-.copyright {
-  background-color: #2d2d2d;
-  text-align: center;
-  color: #ff9a1e;
-  padding: 0.5rem 0;
-}
-
-.block__header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.block__header span {
-  color: #ff9a1e;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.block__header h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-}
-.block__header h2 span {
-  text-transform: capitalize;
-}
-
-.info__wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10rem;
-}
-@media screen and (min-width: 480px) {
-  .info__wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 5rem;
-  }
-}
-.info__image__lg {
-  padding: 4rem;
-  border-radius: 2rem;
-  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
-  margin-bottom: 8rem;
-  background-color: #fff;
-  text-align: center;
-}
-.info__image__variation {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-}
-@media screen and (min-width: 480px) {
-  .info__image__variation {
+@media screen and (min-width: 970px) {
+  .banner__code__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .banner__code__items {
+    margin-left: 10rem;
+    padding: 4rem;
+  }
+  .banner__code__text h1 {
+    font-size: 5rem;
+    font-weight: 800;
+  }
+  .banner__code .free {
+    font-size: 2rem;
+  }
+  .banner__code img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+  }
+}
+
+.props {
+  background: #FFFFFF;
+}
+.props .container {
+  padding: 0 1.5rem;
+}
+.props__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (min-width: 970px) {
+  .props__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
   }
 }
-.info__image__variation button {
+.props__items__items:hover {
+  background-color: red;
+}
+.props__items i {
   padding: 2rem;
-  background-color: #fff;
-  border-radius: 2rem;
-  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  height: 12rem;
-  cursor: pointer;
-}
-.info__image__variation button img {
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
-  transform: translateY(-5rem);
-}
-.info__image__variation button h3 {
-  transform: translateY(-4rem);
-}
-.info__content__header h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
-}
-.info__content__header .meta, .info__content__header ul {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-.info__content__header ul {
-  gap: 0.5rem;
-}
-.info__content__header ul li i {
-  color: #ff9a1e;
-}
-.info__content__header ul li:last-child i {
-  color: #e6e6e6;
-}
-.info__content__header small {
-  color: #ccc;
-}
-.info__content__header .prices {
-  margin: 2rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media screen and (min-width: 480px) {
-  .info__content__header .prices {
-    flex-direction: column;
-    align-items: fle;
-  }
-}
-.info__content__header .prices h2 {
   font-size: 5rem;
+}
+.props__items .bulb:hover {
+  background-color: #c3c3c9;
+}
+.props__items .bulb i:hover {
+  color: #2267F2;
+}
+.props__items .run i:hover {
+  color: green;
+}
+.props__items .run:hover {
+  background-color: #c3c3c9;
+}
+.props__items .built i:hover {
+  color: red;
+}
+.props__items .built:hover {
+  background-color: #c3c3c9;
+}
+.props__items .extensions i:hover {
   color: #ff9a1e;
 }
-.info__content__header .prices p {
-  margin-bottom: 0;
-  color: #ff9a1e;
-  font-size: 2rem;
-  text-decoration: line-through;
-}
-.info__content__header .prices h3 {
-  font-size: 2.5rem;
-  color: #ccc;
-}
-.info__content__body h3 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-.info__content__body .sizes {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-.info__content__body .sizes li {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  color: #cacaca;
-  background-color: #f5f5f5;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 1px;
-  cursor: pointer;
-}
-.info__content__body .sizes li.active {
-  background-color: #ff9a1e;
-  color: #fff;
-  box-shadow: 0px 4px 10px rgba(255, 154, 30, 0.3);
-}
-.info__content__body .quantity {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.6rem 1.8rem;
-  border-radius: 2rem;
-  background-color: #f5f5f5;
-  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
-  gap: 2rem;
-  border: 1px solid #cacaca;
-}
-.info__content__body .quantity li {
-  font-size: 2rem;
-  cursor: pointer;
-}
-.info__content__body .quantity li:first-child {
-  color: #ccc;
-}
-.info__content__body .btn {
-  text-align: center;
-  display: block;
-  width: 100%;
-  margin: 3rem 0;
+.props__items .extensions:hover {
+  background-color: #c3c3c9;
 }
 
-.related__foods {
-  padding: 6rem 0;
-  border-top: 1px solid #f5f5f5;
-}
-.related__foods h3 {
-  font-size: 2rem;
-  margin-bottom: 8rem;
-}
-.related__foods__cards {
+.slider {
+  background-color: #F5F5F5;
+  align-items: center;
   padding: 2rem;
-  background-color: #fff;
-  border-radius: 2rem;
-  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  height: 12rem;
+  position: relative;
 }
-.related__foods img {
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
+.slider__items {
+  margin-left: 0.5rem;
+  display: flex;
+  line-height: 1.2;
+}
+.slider img {
+  width: 6rem;
+  height: 6rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
-  transform: translateY(-2rem);
-}
-.related__foods h3 {
-  transform: translateY(-3rem);
-}
-
-.tns-inner {
-  height: 25rem;
-  transform: translateY(37px);
-}
-
-.tns-controls {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-}
-.tns-controls button {
-  width: 4rem;
-  height: 4rem;
+  -o-object-fit: center center;
+     object-fit: center center;
+  display: block;
   border-radius: 50%;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  margin-right: 1rem;
+}
+.slider strong {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-break: 1;
+  cursor: pointer;
+}
+.slider span {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.slider .fa-brands {
+  margin-left: 15rem;
+  color: gray;
+  opacity: 0.5;
+}
+.slider p {
+  max-width: 40rem;
+}
+.slider .name strong:hover {
+  color: #2267F2;
+}
+.slider .tns-outer {
+  position: relative;
+}
+.slider .tns-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 1px;
-  background-color: #ff9a1e;
-  color: #fff;
+  justify-content: space-between;
+  z-index: 999;
+}
+.slider .tns-controls button {
+  border: none;
   font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */

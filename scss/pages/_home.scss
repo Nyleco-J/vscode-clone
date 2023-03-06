@@ -1,10 +1,10 @@
 .version{
     .container{
-        padding: 1.5rem;
+        padding: .5rem;
     }
-    padding-top:  5rem;
+    padding-top:  6rem;
     background-color: #25252B;
-    &__wrapper{
+    &__text{
         text-align: center;
     }
     p{
@@ -21,6 +21,10 @@
 .banner__code{
     background-color: #2C2C32;
     text-align: center;
+    @include mediaQuery ($break-lg){
+        grid-template-columns: 1fr 2fr;
+        padding: 3rem 0;
+    }
     &__text{
         color: #FFFFFF;
         font-size: 5rem;
@@ -30,6 +34,7 @@
            font-size: 4rem;
            text-align: center;
            padding: 1.5rem;
+           line-height: 1;
             span{
                 font-weight: 100;
                 color: #FFFFFF;
@@ -42,17 +47,26 @@
     }
     .download{
         &__button{
-            background-color: #0066B8;
+            justify-content: center;
             margin: 0 auto;
-            max-width: 30rem;
+            // max-width: 30rem;
             padding: 1rem;
-           
+            display: flex;
+            gap: .6rem;
+            cursor: pointer;
             button{
+                background-color: #0066B8;
                 color: #FFFFFF; 
+                padding: 1rem 1.8rem;
+                font-size: 1.5rem;
             }
             small{
                 color: #FFFFFF;
                 display: block;
+                font-size: 1.2rem;
+            }
+            button:hover{
+                background-color: #034d8a;
             }
            
         }
@@ -60,20 +74,40 @@
     .web{
         font-size: 1.2rem;
         background-color: #25252B;
-        padding: 1rem;
+        padding: .5rem;
         margin: 0 auto;
         color: gray;
+        max-width: 28rem;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
         a{
             color: #2267F2;
-            text-align: center;
         }
+        a:hover{
+            text-decoration: underline;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            background-color: #25252b;
+            top: 0;
+            right: 1rem;
+            z-index: -99;
+            transform: rotate(45deg);
+        }
+        p{
+            margin-bottom: unset;
+        }
+    
         
     }
     .Vscode{
         padding: 1rem;
         font-size: 1.3rem;
         max-width: 22rem;
-        align-items: center;
         margin: 0 auto;
        
         p{
@@ -82,6 +116,150 @@
         a{
             color: #2267F2;
         }
+        a:hover{
+            text-decoration: underline;
+        }
     }
-    
+    .photo{
+        margin: 1rem;
+    }
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            @include grid(2, 1rem)
+        }
+        &__items{
+            margin-left: 10rem;
+            padding: 4rem;
+        }
+        &__text{
+            h1{
+                font-size: 5rem;
+                font-weight: 800;
+            }
+        }
+        .free{
+            font-size: 2rem;
+        }
+        img{
+            @include imgFit(100%, 100%);
+        }
+
+    }
+}
+.props{
+    .container{
+        padding: 0 1.5rem;
+    }
+    background: #FFFFFF;
+   &__items{
+    @include grid(2, 1rem);
+    text-align: center;
+    cursor: pointer;
+    @include mediaQuery($break-lg){
+        @include grid(4, 2rem);
+    }
+    &__items:hover{
+        background-color:red;
+    }
+    i{
+    padding: 2rem;
+    font-size: 5rem;
+    }
+    .bulb{
+        &:hover{
+            background-color: #c3c3c9;
+            
+        }
+        i:hover{
+            color: #2267F2;
+        }
+    }
+    .run{
+        i:hover{
+            color: green;
+        }
+    }
+    .run:hover{
+        background-color: #c3c3c9;
+    }
+    .built{
+        i:hover{
+            color: red;
+        }
+    }
+    .built:hover{
+        background-color: #c3c3c9;
+    }
+    .extensions{
+        i:hover{
+            color: $clr-primary;
+        }
+    }
+    .extensions:hover{
+        background-color: #c3c3c9;
+    }
+   }
+}
+.slider{
+    background-color: #F5F5F5;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    // &__wrapper{
+    //     @include grid(1, 2rem);
+    //     @include mediaQuery ($break-lg){
+    //         @include grid(3, 1rem);
+    //     } 
+    // }
+    &__items{
+        margin-left: .5rem;
+        display: flex;
+        line-height: 1.2
+    }
+    img{
+        @include imgFit(6rem, 6rem);
+         border-radius: 50%;
+         box-shadow: 2px 2px 2px 0 rgb(0 0 0 / 20%);
+         margin-right: 1rem;
+        //  transition: .5s ease;
+     }
+     strong{
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-break: 1;
+        cursor: pointer;
+    }
+    span{
+        font-size: 1.2rem;
+        opacity: .5;  
+        cursor: pointer;  
+    }
+    .fa-brands{
+        margin-left: 15rem;
+        color: gray;
+        opacity: .5;
+    }
+    p{
+        max-width: 40rem;
+    }
+    .name{
+        strong:hover{   
+            color: #2267F2;
+        }
+    }
+    .tns-outer{
+        position: relative;
+    }
+    .tns-controls{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 999;
+        button{
+            border: none;
+            font-size: 2rem;
+        }
+    }
 }
