@@ -139,10 +139,9 @@
         }
         .free{
             font-size: 2rem;
-            
         }
         img{
-            @include imgFit(100%, 100%);
+            @include imgFit(50%, 80%);
         }
 
     }
